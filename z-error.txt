@@ -1,0 +1,153 @@
+the text on the template is not correct (edit the front-end) 
+the book-appointment and logout out button is not respponsive 
+book appointment and logout button doesn't show on mobile view port
+error handling user registraion i need to handle exeption error(e.g sending verification email to the user on poor network throw error)
+
+
+   public function getDoctorBusinessHours(Request $request, $doctor_id)
+    {
+        $doctor = User::find($doctor_id);
+        $dataPeriod = CarbonPeriod::create(now(), now()->addDays(6));
+        $data = [];
+
+        foreach ($dataPeriod as $date) {
+            $dayName = $date->format('l');
+            $formattedDate = $date->format('d M');
+
+            $businessHours = Business_hour::where('doctor_id', $doctor_id)
+                ->where('off', false)
+                ->where('day', $dayName)
+                ->first();
+
+            // Check if business hours are found for the day
+            if ($businessHours) {
+                $businessHours = $businessHours->TimesPeriod;
+
+                $currentAppointments = appointment::where('appointment_date', $date->toDateString())
+                    ->where('doctor_id', $doctor_id)
+                    ->pluck('appointment_time')
+                    ->map(function ($time) {
+                        return $time->format('H:i');
+                    })
+                    ->toArray();
+
+                // If it's the current date, filter out past times
+                if ($date->isToday()) {
+                    $currentHour = now()->format('H:i');
+                    $businessHours = array_filter($businessHours, function ($time) use ($currentHour) {
+                        return $time > $currentHour;
+                    });
+                }
+
+                $availableHours = array_diff($businessHours, $currentAppointments);
+
+                $data[] = [
+                    'day_name' => $dayName,
+                    'data' => $formattedDate,
+                    'available_time' => $availableHours
+                ];
+            }
+        }
+
+        return $data;
+    }
+
+    List of notification 
+    appointment notification 
+    cancel appomintment notification
+    reschedule  appointment notification
+    30 minutes earler b4 appointment notifcation
+
+
+   public function getDoctorBusinessHours(Request $request, $doctor_id)
+    {
+        $doctor = User::find($doctor_id);
+        $dataPeriod = CarbonPeriod::create(now(), now()->addDays(6));
+        $data = [];
+
+        foreach ($dataPeriod as $date) {
+            $dayName = $date->format('l');
+
+            // Check if the doctor is marked as off for the day
+            $isDayOff = Business_hour::where('doctor_id', $doctor_id)
+                ->where('off', true)
+                ->where('day', $dayName)
+                ->exists();
+
+            // If the doctor is off for the day, skip this day and continue to the next iteration
+            if ($isDayOff) {
+                continue;
+            }
+
+            // Retrieve business hours for the day
+            $businessHoursRecord = Business_hour::where('doctor_id', $doctor_id)
+                ->where('off', false)
+                ->where('day', $dayName)
+                ->first();
+
+            // Check if there's a record for the day
+            if ($businessHoursRecord) {
+                $businessHours = $businessHoursRecord->TimesPeriod;
+            } else {
+                // If no record found for the day, set business hours to an empty array
+                $businessHours = [];
+            }
+
+            $currentAppointments = appointment::where('appointment_date', $date->toDateString())
+                ->where('doctor_id', $doctor_id)
+                ->pluck('appointment_time')
+                ->map(function ($time) {
+                    return $time->format('H:i');
+                })
+                ->toArray();
+
+            $availableHours = array_diff($businessHours, $currentAppointments);
+
+            $data[] = [
+                'day_name' => $dayName,
+                'date' => $date->format('d M'),
+                'available_time' => $availableHours
+            ];
+        }
+
+        return $data;
+    }
+
+
+
+ 
+    
+
+
+    // ***************************************************** 
+function runMatureInvestment() {
+    // Make an AJAX POST request to the Laravel API endpoint
+    fetch('/api/run-mature-investment', {
+        method: 'POST',
+    })
+        .then(response => {
+            if (response.ok) {
+                // console.log('matureInvestment function executed successfully.');
+            } else {
+                console.error('Failed to execute matureInvestment function.');
+            }
+        })
+        .catch(error => {
+            console.error('Failed to execute matureInvestment function:', error);
+        });
+}
+
+// Call the function on page load
+document.addEventListener('DOMContentLoaded', () => {
+    runMatureInvestment();
+});
+// Call the function every minute (60,000 milliseconds)
+setInterval(runMatureInvestment, 60000);
+
+
+
+
+
+// *****************************************************
+
+doctor code 673503

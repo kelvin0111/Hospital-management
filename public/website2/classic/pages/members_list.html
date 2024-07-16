@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Mirrored from crypto-admin-templates.multipurposethemes.com/sass/classic/pages/members_list.html by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 15 Jul 2023 21:43:30 GMT -->
+<head>
+  <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="https://crypto-admin-templates.multipurposethemes.com/sass/images/favicon.ico">
+
+	
+    <title>Crypto Admin - Responsive Bootstrap Admin HTML Templates + Bitcoin Dashboards + ICO </title>
+  
+	<!-- Bootstrap 4.0-->
+	<link rel="stylesheet" href="../../assets/vendor_components/bootstrap/dist/css/bootstrap.min.css">
+	
+	<!-- Data Table-->
+	<link rel="stylesheet" type="text/css" href="../../assets/vendor_components/datatable/datatables.min.css"/>
+	
+	<!-- theme style -->
+	<link rel="stylesheet" href="../css/style.css">
+	
+	<!-- Admin skins -->
+	<link rel="stylesheet" href="../css/skin_color.css">	
+
+</head>
+<body class="hold-transition light-skin sidebar-mini theme-classic fixed">
+<!-- Site wrapper -->
+<div class="wrapper">
+
+  <header class="main-header">
+    <!-- Logo -->
+    <a href="../index.html" class="logo">
+      <!-- mini logo -->
+	  <div class="logo-mini">
+		  <span class="light-logo"><img src="../../images/logo-dark.png" alt="logo"></span>
+		  <span class="dark-logo"><img src="../../images/logo-dark.png" alt="logo"></span>
+	  </div>
+      <!-- logo-->
+      <div class="logo-lg">
+		  <span class="light-logo"><img src="../../images/logo-dark-text.png" alt="logo"></span>
+	  	  <span class="dark-logo"><img src="../../images/logo-dark-text.png" alt="logo"></span>
+	  </div>
+    </a>
+    <!-- Header Navbar -->
+    <nav class="navbar navbar-static-top">
+      <!-- Sidebar toggle button-->
+	  <div>
+		  <a href="#" class="sidebar-toggle" data-toggle="push-menu" role="button">
+			<i class="ti-align-left"></i>
+		  </a>
+		  
+		  <a href="#" data-provide="fullscreen" class="sidebar-toggle" title="Full Screen">
+			<i class="mdi mdi-crop-free"></i>
+		  </a> 
+		
+	  </div>
+		
+      <div class="navbar-custom-menu r-side">
+        <ul class="nav navbar-nav">
+		  <!-- full Screen -->
+	      <li class="search-bar">		  
+			  <div class="lookup lookup-circle lookup-right">
+			     <input type="text" name="s">
+			  </div>
+		  </li>			
+		  <!-- Messages -->
+		  
+		  <!-- Notifications -->
+		 
+		  <!-- Tasks -->
+		 
+			
+		  <!-- User Account-->
+        
+			
+		  
+          <!-- Control Sidebar Toggle Button -->
+        
+			
+        </ul>
+      </div>
+    </nav>
+  </header>
+  
+  <!-- Left side column. contains the logo and sidebar -->
+<aside class="main-sidebar">
+	<!-- sidebar-->
+	<section class="sidebar position-relative">
+
+		<div class="user-profile">
+			<div class="ulogo">
+				<a href="../../classic/index-2.html">
+					<!-- logo for regular state and mobile devices -->
+					<h3><b>Crypto</b>Admin</h3>
+				</a>
+			</div>
+			<div class="profile-pic">
+				<img src="../../images/user5-128x128.jpg" alt="user">
+				<div class="profile-info">
+					<h5 class="mt-15">John Doe</h5>
+					<div class="text-center d-inline-block">
+
+						<a href="#" class="link" data-toggle="tooltip" title="" data-original-title="Logout"><i
+								class="ion ion-power"></i></a>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="multinav">
+			<div class="multinav-scroll" style="height: 100%;">
+				<!-- sidebar menu-->
+				<ul class="sidebar-menu" data-widget="tree">
+
+					<li class="header nav-small-cap">PERSONAL</li>
+
+					<li class="treeview">
+						<a href="#">
+							<i class="ti-dashboard"></i>
+							<span>Dashboard</span>
+							<span class="pull-right-container">
+								<i class="fa fa-angle-right pull-right"></i>
+							</span>
+						</a>
+						<ul class="treeview-menu">
+							<li><a href="../index-2.html"><i class="ti-more"></i>Dashboard</a></li>
+						</ul>
+					</li>
+					<li class="treeview">
+						<a href="#">
+							<i class="ti-bar-chart"></i>
+							<span>Transactions</span>
+							<span class="pull-right-container">
+								<i class="fa fa-angle-right pull-right"></i>
+							</span>
+						</a>
+						<ul class="treeview-menu">
+							<li><a href="transfer.html"><i class="ti-more"></i>Transfer</a></li>
+							<li><a href="deposits.html"><i class="ti-more"></i>Deposits</a></li>
+							<li><a href="withdrawals.html"><i class="ti-more"></i>Withdrawal</a></li>
+							<li><a href="investments.html"><i class="ti-more"></i>Investments</a></li>
+						</ul>
+					</li>
+					<li>
+						<a href="wallets.html">
+							<i class="ti-reload"></i>
+							<span>Wallet</span>
+						</a>
+					</li>
+					<li class="treeview">
+						<a href="#">
+							<i class="ti-user"></i>
+							<span>Members</span>
+							<span class="pull-right-container">
+								<i class="fa fa-angle-right pull-right"></i>
+							</span>
+						</a>
+						<ul class="treeview-menu">
+							<li><a href="members_list.html"><i class="ti-more"></i>Members List</a></li>
+							<li><a href="member_profile.html"><i class="ti-more"></i>Member Profile</a>
+							</li>
+						</ul>
+					</li>
+
+					<li class="treeview">
+						<a href="#">
+							<i class="ti-user"></i>
+							<span>Account</span>
+							<span class="pull-right-container">
+								<i class="fa fa-angle-right pull-right"></i>
+							</span>
+						</a>
+						<ul class="treeview-menu">
+						<li><a href="security.html"><i class="ti-more"></i>Security</a></li>
+						<li><a href="profile.html"><i class="ti-more"></i>Profile</a>
+							</li>
+						</ul>
+					</li>
+
+
+				</ul>
+			</div>
+		</div>
+	</section>
+</aside>
+  
+
+  <!-- Content Wrapper. Contains page content -->
+  <div class="content-wrapper">
+	  <div class="container-full">
+		<!-- Content Header (Page header) -->
+		<div class="content-header">
+			<h3>
+				Members List
+		  	</h3>
+		  	<ol class="breadcrumb">
+				<li class="breadcrumb-item"><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
+				<li class="breadcrumb-item"><a href="#">Members</a></li>
+				<li class="breadcrumb-item active">Members List</li>
+		  	</ol>
+		</div>
+
+		<!-- Main content -->
+		<section class="content">
+		    <div class="row">
+			  <div class="col-12">
+				<div class="box">
+				<div class="box-body">
+					<div class="table-responsive">
+					  <table id="example5" class="table table-hover">
+						<thead class="d-none">
+							<tr>
+								<th>&nbsp;</th>
+								<th>&nbsp;</th>
+								<th>&nbsp;</th>
+								<th>&nbsp;</th>
+								<th>&nbsp;</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td class="w-20"><i class="fa fa-square-o pt-15"></i></td>
+								<td class="w-20"><i class="fa fa-star text-warning"></i></td>
+								<td class="w-60">
+								  <a class="avatar avatar-lg status-success" href="#">
+									<img src="../../images/avatar/1.jpg" alt="...">
+								  </a>
+								</td>
+								<td class="w-300">
+									<p class="mb-0">
+									  <a href="#"><strong>Maryam Amiri</strong></a>
+									  <small class="sidetitle">dummy@gmail.com</small>
+									</p>
+								</td>
+							</tr>
+
+
+							
+						</tbody>
+					  </table>
+					</div>
+				</div>
+				<!-- /.box-body -->
+			  </div>
+			  <!-- /.box -->
+			  </div>			
+			</div>
+		</section>
+		<!-- /.content -->
+	  
+	  </div>
+  </div>
+  <!-- /.content-wrapper -->
+ 
+   <footer class="main-footer">
+    <div class="pull-right d-none d-sm-inline-block">
+        <ul class="nav nav-primary nav-dotted nav-dot-separated justify-content-center justify-content-md-end">
+		  <li class="nav-item">
+			<a class="nav-link" href="javascript:void(0)">FAQ</a>
+		  </li>
+		  <li class="nav-item">
+			<a class="nav-link" href="#">Purchase Now</a>
+		  </li>
+		</ul>
+    </div>
+	  &copy; 2020 <a href="https://www.multipurposethemes.com/">Multi-Purpose Themes</a>. All Rights Reserved.
+  </footer>
+  <!-- Control Sidebar -->
+ 
+  <!-- /.control-sidebar -->
+  
+  <!-- Add the sidebar's background. This div must be placed immediately after the control sidebar -->
+  <div class="control-sidebar-bg"></div>
+</div>
+<!-- ./wrapper -->
+
+
+	<!-- jQuery 3 -->
+	<script src="../../assets/vendor_components/jquery-3.3.1/jquery-3.3.1.js"></script>
+	
+	<!-- fullscreen -->
+	<script src="../../assets/vendor_components/screenfull/screenfull.js"></script>
+	
+	<!-- popper -->
+	<script src="../../assets/vendor_components/popper/dist/popper.min.js"></script>
+	
+	<!-- Bootstrap 4.0-->
+	<script src="../../assets/vendor_components/bootstrap/dist/js/bootstrap.min.js"></script>
+	
+	<!-- SlimScroll -->
+	<script src="../../assets/vendor_components/jquery-slimscroll/jquery.slimscroll.min.js"></script>
+	
+	<!-- FastClick -->
+	
+	<script src="../../assets/vendor_components/fastclick/lib/fastclick.js"></script>
+	<script src="../../assets/vendor_components/perfect-scrollbar/dist/perfect-scrollbar.js"></script>
+	
+	<!-- This is data table -->
+    <script src="../../assets/vendor_components/datatable/datatables.min.js"></script>
+	<script src="../js/pages/data-table.js"></script>
+	
+	<!-- Crypto Admin App -->
+	<script src="../js/template.js"></script>
+	
+	<!-- Crypto Admin for demo purposes -->
+	<script src="../js/demo.js"></script>
+	
+
+</body>
+
+<!-- Mirrored from crypto-admin-templates.multipurposethemes.com/sass/classic/pages/members_list.html by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 15 Jul 2023 21:43:41 GMT -->
+</html>
